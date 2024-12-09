@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres
+    container_name: tse-db-container 
+    restart: always
+    environment:
+      POSTGRES_USER: tcsigner
+      POSTGRES_PASSWORD: 'Infini@Tc#123'
+      POSTGRES_DB: tcsignerdb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432"
+
+volumes:
+  postgres_data:
+

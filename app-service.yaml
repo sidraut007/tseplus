@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  tseplus:
+    container_name: tseplus-container
+    image: tseplus1.2
+    environment:
+      DB_HOST: 172.20.0.2
+      DB_PORT: 5432
+      PG_TSEDBUSER: tcsigner
+      PG_TSEDBPASSWORD: 'Infini@Tc#123'
+      PG_TSEDB: tcsignerdb
+    volumes:
+      - tsepaas_tse_data:/opt
+    ports:
+      - "8084"
+volumes:
+    tsepaas_tse_data:
+      external: true
